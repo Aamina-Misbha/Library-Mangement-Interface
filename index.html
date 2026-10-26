@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Library Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>📚 Library Management System</h1></header>
+<main>
+  <div class="stats">
+    <div class="stat"><b id="sTotal">0</b><span>Total</span></div>
+    <div class="stat"><b id="sIn">0</b><span>Available</span></div>
+    <div class="stat"><b id="sOut">0</b><span>Issued</span></div>
+  </div>
+  <div class="card">
+    <h2>Add a Book</h2>
+    <div class="row">
+      <input id="title" placeholder="Title">
+      <input id="author" placeholder="Author">
+      <input id="cat" placeholder="Category">
+      <button onclick="addBook()">Add</button>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Books</h2>
+    <div class="row" style="margin-bottom:8px">
+      <input id="search" placeholder="Search title, author or category" oninput="render()">
+      <select id="filter" onchange="render()">
+        <option value="all">All</option>
+        <option value="in">Available</option>
+        <option value="out">Issued</option>
+      </select>
+    </div>
+    <div id="list"></div>
+  </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
